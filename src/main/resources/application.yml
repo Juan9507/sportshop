@@ -13,8 +13,7 @@ spring:
       max-acquire-time: 10s
       max-create-connection-time: 10s
       validation-query: "SELECT 1 FROM DUAL"
-    logging:
-      level:
-        org.springframework.r2dbc: DEBUG
-        io.r2dbc: DEBUG
-        io.r2dbc.mysql: TRACE
+    #logging:
+      #level:
+        #org.springframework.r2dbc: DEBUG
+        #io.r2dbc: DEBUG
