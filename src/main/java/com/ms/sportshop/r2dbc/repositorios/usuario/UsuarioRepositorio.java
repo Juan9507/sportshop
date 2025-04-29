@@ -12,7 +12,7 @@ public interface UsuarioRepositorio extends R2dbcRepository<UsuarioTabla,Integer
             	DOCUMENTO, BARRIO, APELLIDO, CONTRASENIA, CORREO, TELEFONO, NOMBRE, DIRECCION, EDAD,
             	tipoDocumento.DESCRIPCION AS TIPO_DOCUMENTO, rol.DESCRIPCION AS ROL,
                 ciudad.DESCRIPCION AS CIUDAD, pais.DESCRIPCION AS PAIS
-            FROM sports_shop.usuario usuario
+            FROM usuario usuario
             INNER JOIN TIPO_DOCUMENTO tipoDocumento ON tipoDocumento.ID_TIPO_DOCUMENTO = usuario.TIPO_DOCUMENTO
             INNER JOIN ROL rol ON rol.id_rol = usuario.ROL_ID_ROL
             INNER JOIN CIUDAD ciudad ON ciudad.id_ciudad = usuario.CIUDAD_ID_CIUDAD

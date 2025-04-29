@@ -1,5 +1,6 @@
 package com.ms.sportshop;
 
+import com.ms.sportshop.servicios.producto.ProductoServicio;
 import com.ms.sportshop.servicios.usuario.UsuarioServicio;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -9,9 +10,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class SportshopApplication implements CommandLineRunner {
 
 	private final UsuarioServicio usuarioServicio;
+	private final ProductoServicio productoServicio;
 
-    public SportshopApplication(UsuarioServicio usuarioServicio) {
+    public SportshopApplication(UsuarioServicio usuarioServicio, ProductoServicio productoServicio) {
         this.usuarioServicio = usuarioServicio;
+        this.productoServicio = productoServicio;
     }
 
     public static void main(String[] args) {
@@ -20,7 +23,7 @@ public class SportshopApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		usuarioServicio.obtenerTodos()
+		productoServicio.obtenerTodos()
 				.subscribe();
 	}
 }
