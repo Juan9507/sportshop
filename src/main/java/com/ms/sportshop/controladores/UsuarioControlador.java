@@ -2,7 +2,6 @@ package com.ms.sportshop.controladores;
 
 import com.ms.sportshop.dtos.usuario.MensajeResultado;
 import com.ms.sportshop.dtos.usuario.UsuarioDto;
-import com.ms.sportshop.r2dbc.modelos.usuario.UsuarioTabla;
 import com.ms.sportshop.servicios.usuario.UsuarioServicio;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;

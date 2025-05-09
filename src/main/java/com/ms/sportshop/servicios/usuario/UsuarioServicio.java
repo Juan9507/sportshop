@@ -59,9 +59,9 @@ public class UsuarioServicio {
      */
     public Mono<ResponseEntity<MensajeResultado>> ingresarSesion(String correo, String contrasenia){
         return  usuarioImplRepositorio.iniciarSesion(correo, contrasenia)
-                .flatMap(usuarioDto -> Mono.just(mensajeValidacion("Inicio se sesión sastifactorio ", usuarioDto)))
+                .flatMap(usuarioDto -> Mono.just(mensajeValidacion("Inicio se sesión satisfactoria", usuarioDto)))
                 .defaultIfEmpty(mensajeValidacion("Usuario o contraseña incorrectas", null))
-                .onErrorResume(t -> Mono.just(mensajeValidacion("Error al ingresar sesión: " + t.getMessage(), null)));
+                .onErrorResume(t -> Mono.just(mensajeValidacion("Error al ingresar sesión:" + t.getMessage(), null)));
     }
 
     /**
