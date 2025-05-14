@@ -8,7 +8,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
-import java.sql.Date;
+import java.time.LocalDateTime;
 
 @Data
 @NoArgsConstructor
@@ -21,18 +21,21 @@ public class CompraTabla {
     @Column("CODIGO_COMPRA")
     private Integer codigoCompra;
 
-    @Column("CANTIDAD")
-    private String cantidad;
+    @Column("TALLA")
+    private String talla;
 
     @Column("ID_USUARIO")
-    private String idUsuario;
+    private Integer idUsuario;
 
     @Column("PRECIO_TOTAL")
-    private Double precioTotal;
+    private String precioTotal;
 
     @Column("FECHA_COMPRA")
-    private Date date;
+    private LocalDateTime fechaCompra;
 
     @Column("ESTADO_ID_ESTADO")
     private Integer estadoIdEestado;
+
+    @Column("PRODUCTO_CODIGO_PRODUCT")
+    private Integer productoCodigoProduct;
 }

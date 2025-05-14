@@ -5,7 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 @Data
 @NoArgsConstructor
@@ -14,9 +14,10 @@ import java.util.Date;
 public class CompraDto {
 
     private Integer codigoCompra;
-    private String cantidad;
-    private String idUsuario;
-    private Double precioTotal;
-    private Date date;
+    private String talla;
+    private Integer idUsuario;
+    private String precioTotal;
+    private LocalDateTime fechaCompra;
     private Integer estadoIdEestado;
+    private Integer productoCodigoProduct;
 }

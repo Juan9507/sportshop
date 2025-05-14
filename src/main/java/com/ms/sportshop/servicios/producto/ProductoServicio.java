@@ -6,6 +6,9 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.java.Log;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
+
+import java.math.BigDecimal;
 
 /**
  * Clase dedicada para la logica de negocio que se le requiera hacer
@@ -18,8 +21,11 @@ public class ProductoServicio {
 
     private final ProductoImplRepositorio productoImplRepositorio;
 
-    public Flux<ProductoDto> obtenerTodos(){
-        return productoImplRepositorio.obternerTodo()
-                .doOnNext(productoDto -> log.info("Productos: " + productoDto));
+    public Flux<ProductoDto> obtenerTodosLosProductos(){
+        return productoImplRepositorio.obternerTodosLosProductos();
+    }
+
+    public Mono<ProductoDto> obtenerProductoPorId(Integer id){
+        return productoImplRepositorio.obtenerProductoPorId(id);
     }
 }

@@ -33,7 +33,7 @@ public class UsuarioImplRepositorio {
 
         return Mono.just(usuarioDto)
                 .map(UsuarioMapeo.INSTANCE::aTabla)
-                .map(usuarioTabla -> usuarioRepositorio.guardarUsuario(
+                .flatMap(usuarioTabla -> usuarioRepositorio.guardarUsuario(
                         usuarioTabla.getDocumento(),usuarioTabla.getBarrio(),
                         usuarioTabla.getApellido(), usuarioTabla.getContrasenia(),
                         usuarioTabla.getCorreo(), usuarioTabla.getTelefono(),
@@ -42,7 +42,6 @@ public class UsuarioImplRepositorio {
                         usuarioTabla.getRol(), usuarioTabla.getCiudad(),
                         usuarioTabla.getPais()
                 ))
-                .flatMap(usuarioTablaMono -> usuarioTablaMono)
                 .map(UsuarioMapeo.INSTANCE::aEntidad);
 
     }

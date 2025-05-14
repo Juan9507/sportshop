@@ -29,7 +29,7 @@ public class ProductoTabla {
     private String imagen;
 
     @Column("PRECIO")
-    private double precio;
+    private String precio;
 
     @ReadOnlyProperty
     private String categoria;

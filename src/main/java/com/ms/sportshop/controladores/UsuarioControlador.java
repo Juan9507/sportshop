@@ -11,7 +11,6 @@ import reactor.core.publisher.Mono;
 @AllArgsConstructor
 @RestController
 @RequestMapping("/api")
-@CrossOrigin("*")
 public class UsuarioControlador {
 
     private final UsuarioServicio usuarioServicio;
